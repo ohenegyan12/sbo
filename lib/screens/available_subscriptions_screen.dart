@@ -38,14 +38,6 @@ class _AvailableSubscriptionsScreenState extends State<AvailableSubscriptionsScr
       logoIsCircle: false,
       type: SubscriptionType.dstv,
     ),
-    Subscription(
-      title: 'Purchase MTN\nData',
-      subtitle: 'Purchase',
-      backgroundColor: const Color(0xFF081730), // Dark Navy
-      logoPath: AppAssets.mtnLogo,
-      logoIsCircle: true,
-      type: SubscriptionType.mtn,
-    ),
   ];
 
   late List<Subscription> _filteredSubscriptions;

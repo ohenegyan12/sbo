@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants/app_assets.dart';
 import '../constants/app_colors.dart';
 import 'login_screen.dart';
+import 'signup_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -74,7 +75,7 @@ class OnboardingScreen extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => const LoginScreen()),
+                          MaterialPageRoute(builder: (context) => const SignUpScreen()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

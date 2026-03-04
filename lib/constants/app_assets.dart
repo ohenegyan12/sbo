@@ -12,6 +12,7 @@ class AppAssets {
   // Illustrations
   static const String onboardingIllustration = '$_illustrationsPath/onboarding-illustration.svg';
   static const String successCheck = '$_illustrationsPath/success-check.svg';
+  static const String signUpSuccess = '$_illustrationsPath/sign-up-success.svg';
   static const String noSubscription = '$_illustrationsPath/no-subscription.svg';
 
   // Icons

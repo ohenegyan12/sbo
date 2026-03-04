@@ -5,7 +5,16 @@ import '../constants/app_colors.dart';
 import 'login_screen.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key});
+  final String title;
+  final String subtitle;
+  final String? illustration;
+
+  const SuccessScreen({
+    super.key,
+    this.title = 'Password Reset Successful',
+    this.subtitle = 'Click on the login page to sign in with your new password',
+    this.illustration,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,52 +45,52 @@ class SuccessScreen extends StatelessWidget {
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      // Glow behind the check
-                      Container(
-                        width: 140,
-                        height: 140,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppColors.primaryColor.withOpacity(0.2),
-                              blurRadius: 50,
-                              spreadRadius: 20,
-                            ),
-                          ],
+                      if (illustration == null)
+                        Container(
+                          width: 140,
+                          height: 140,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColors.primaryColor.withOpacity(0.2),
+                                blurRadius: 50,
+                                spreadRadius: 20,
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
                       SvgPicture.asset(
-                        AppAssets.successCheck,
-                        height: 180,
+                        illustration ?? AppAssets.successCheck,
+                        height: 220,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 40),
                   
-                  // Success Badge
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Text(
-                      'Successfull',
-                      style: TextStyle(
-                        color: AppColors.primaryColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                  if (illustration == null)
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryColor.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Text(
+                        'Successful',
+                        style: TextStyle(
+                          color: AppColors.primaryColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 24),
+                  if (illustration == null) const SizedBox(height: 24),
                   
                   // Main Heading
-                  const Text(
-                    'Password Reset Successful',
+                  Text(
+                    title,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: AppColors.darkBackground,
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
@@ -91,7 +100,7 @@ class SuccessScreen extends StatelessWidget {
                   
                   // Subtitle
                   Text(
-                    'Click on the login page to sign in with your new password',
+                    subtitle,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: AppColors.darkBackground.withOpacity(0.5),

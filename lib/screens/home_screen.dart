@@ -287,12 +287,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             
             _buildTransactionItem(
-              title: 'MTN Data Purchase',
-              subtitle: '2 mins ago',
-              amount: 'GHS 50.00',
-              imagePath: AppAssets.mtnLogo,
-            ),
-            _buildTransactionItem(
               title: 'DSTV Subscription',
               subtitle: '1 hour ago',
               amount: 'GHS 250.00',

@@ -12,6 +12,29 @@ class PurchaseSubscriptionScreen extends StatefulWidget {
 }
 
 class _PurchaseSubscriptionScreenState extends State<PurchaseSubscriptionScreen> {
+  late TextEditingController _packageController;
+  late TextEditingController _amountController;
+  late TextEditingController _icuController;
+  late TextEditingController _serialController;
+
+  @override
+  void initState() {
+    super.initState();
+    _packageController = TextEditingController(text: 'DSTV Compact Plus');
+    _amountController = TextEditingController(text: 'GHS 250.00');
+    _icuController = TextEditingController(text: '1029384756');
+    _serialController = TextEditingController(text: 'SN-987654321');
+  }
+
+  @override
+  void dispose() {
+    _packageController.dispose();
+    _amountController.dispose();
+    _icuController.dispose();
+    _serialController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     bool isDstv = widget.type == SubscriptionType.dstv;
@@ -68,7 +91,7 @@ class _PurchaseSubscriptionScreenState extends State<PurchaseSubscriptionScreen>
                     elevation: 0,
                   ),
                   child: Text(
-                    isDstv ? 'Purchase Package' : 'Purchase Data',
+                    isDstv ? 'Purchase Subscription' : 'Purchase Data',
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -87,16 +110,16 @@ class _PurchaseSubscriptionScreenState extends State<PurchaseSubscriptionScreen>
   List<Widget> _buildDstvFields() {
     return [
       _buildLabel('Package'),
-      _buildDropdownField('Select package'),
-      const SizedBox(height: 16),
-      _buildLabel('Amount'),
-      _buildTextField('Amount', isPlaceholder: true), // Disabled/Readonly look
+      _buildTextField('Package', controller: _packageController, isReadOnly: true),
       const SizedBox(height: 24),
-      _buildLabel('Decoder number'),
-      _buildTextField('enter decoder number'),
+      _buildLabel('Amount'),
+      _buildTextField('Amount', controller: _amountController, isReadOnly: true),
+      const SizedBox(height: 24),
+      _buildLabel('ICU Number'),
+      _buildTextField('enter ICU number', controller: _icuController),
       const SizedBox(height: 24),
       _buildLabel('Serial number'),
-      _buildTextField('enter serial number'),
+      _buildTextField('enter serial number', controller: _serialController),
     ];
   }
 
@@ -106,7 +129,7 @@ class _PurchaseSubscriptionScreenState extends State<PurchaseSubscriptionScreen>
       _buildDropdownField('Select package'),
       const SizedBox(height: 24),
       _buildLabel('Amount'),
-      _buildTextField('Amount', isPlaceholder: true),
+      _buildTextField('Amount', isReadOnly: true),
       const SizedBox(height: 24),
       _buildLabel('Duration'),
       _buildDropdownField('Select duration'),
@@ -156,16 +179,17 @@ class _PurchaseSubscriptionScreenState extends State<PurchaseSubscriptionScreen>
     );
   }
 
-  Widget _buildTextField(String hint, {bool isPlaceholder = false}) {
+  Widget _buildTextField(String hint, {TextEditingController? controller, bool isReadOnly = false}) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
       decoration: BoxDecoration(
-        color: isPlaceholder ? const Color(0xFFF5F6FA) : Colors.white,
+        color: isReadOnly ? const Color(0xFFF5F6FA) : Colors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: Colors.grey.shade200),
       ),
       child: TextField(
-        enabled: !isPlaceholder,
+        controller: controller,
+        readOnly: isReadOnly,
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: hint,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
 import 'forgot_password_screen.dart';
-
 import 'home_screen.dart';
+import 'signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -40,17 +40,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Login',
                       style: TextStyle(
                         color: AppColors.darkBackground.withOpacity(0.6),
-                        fontSize: 16,
+                        fontSize: 20,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 12),
                     const Text(
                       'Welcome Back',
                       style: TextStyle(
                         color: AppColors.darkBackground,
-                        fontSize: 32,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -188,13 +188,24 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: AppColors.darkBackground.withOpacity(0.8),
                             fontSize: 14,
                           ),
-                          children: const [
-                            TextSpan(text: 'Have an issue logging in? '),
-                            TextSpan(
-                              text: 'Contact Support',
-                              style: TextStyle(
-                                color: AppColors.primaryColor,
-                                fontWeight: FontWeight.w500,
+                          children: [
+                            const TextSpan(text: "Don't have an account? "),
+                            WidgetSpan(
+                              alignment: PlaceholderAlignment.middle,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                                  );
+                                },
+                                child: const Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                    color: AppColors.primaryColor,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 14,
+                                  ),
+                                ),
                               ),
                             ),
                           ],

@@ -35,7 +35,7 @@ class NotificationCenterScreen extends StatelessWidget {
       ),
       NotificationItem(
         title: 'Payment Successful',
-        body: 'You successfully purchased GHS 50.00 MTN Data for 024XXXX456.',
+        body: 'You successfully renewed your DSTV Compact subscription.',
         time: '1 hour ago',
         isRead: false,
         icon: Icons.check_circle_outline_rounded,

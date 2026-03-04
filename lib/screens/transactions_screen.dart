@@ -36,31 +36,10 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
       date: 'Today',
     ),
     TransactionListItem(
-      title: 'MTN Data Purchase',
-      subtitle: '09:15 AM',
-      amount: 'GHS 50.00',
-      imagePath: AppAssets.mtnLogo,
-      date: 'Today',
-    ),
-    TransactionListItem(
-      title: 'MTN Data Purchase',
-      subtitle: '08:30 PM',
-      amount: 'GHS 100.00',
-      imagePath: AppAssets.mtnLogo,
-      date: 'Yesterday',
-    ),
-    TransactionListItem(
       title: 'DSTV Subscription',
       subtitle: '11:20 AM',
       amount: 'GHS 250.00',
       imagePath: AppAssets.dstvLogo,
-      date: 'June 27, 2024',
-    ),
-    TransactionListItem(
-      title: 'MTN Data Purchase',
-      subtitle: '04:44 PM',
-      amount: 'GHS 25.00',
-      imagePath: AppAssets.mtnLogo,
       date: 'June 27, 2024',
     ),
   ];
