@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'purchase_subscription_screen.dart';
+import 'select_package_screen.dart';
 import '../constants/app_assets.dart';
 import '../constants/app_colors.dart';
 
@@ -138,7 +139,7 @@ class _AvailableSubscriptionsScreenState extends State<AvailableSubscriptionsScr
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => PurchaseSubscriptionScreen(type: sub.type),
+                                builder: (context) => SelectPackageScreen(type: sub.type),
                               ),
                             );
                           },

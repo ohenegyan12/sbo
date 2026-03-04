@@ -8,6 +8,7 @@ class AppAssets {
   static const String mtnLogo = '$_imagesPath/mtn.png';
   static const String dstvLogo = '$_imagesPath/dstv.png';
   static const String onboardingImage = '$_imagesPath/onboardin-image.jpg';
+  static const String packageImage = '$_imagesPath/package-image.png';
 
   // Illustrations
   static const String onboardingIllustration = '$_illustrationsPath/onboarding-illustration.svg';
