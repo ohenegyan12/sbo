@@ -7,16 +7,18 @@ class AppAssets {
   static const String logo = '$_imagesPath/logo.svg';
   static const String mtnLogo = '$_imagesPath/mtn.png';
   static const String dstvLogo = '$_imagesPath/dstv.png';
+  static const String onboardingImage = '$_imagesPath/onboardin-image.jpg';
 
   // Illustrations
   static const String onboardingIllustration = '$_illustrationsPath/onboarding-illustration.svg';
   static const String successCheck = '$_illustrationsPath/success-check.svg';
+  static const String noSubscription = '$_illustrationsPath/no-subscription.svg';
 
   // Icons
   static const String purchaseSubscription = '$_iconsPath/purchase-subscription.svg';
   static const String contactSupport = '$_iconsPath/contact-support.svg';
   static const String home = '$_iconsPath/home.svg';
   static const String subscriptions = '$_iconsPath/subscriptions.svg';
-  static const String transaction = '$_iconsPath/transaction.svg';
+  static const String transactions = '$_iconsPath/transaction.svg';
   static const String profile = '$_iconsPath/profile.svg';
 }
