@@ -19,7 +19,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final bottomInset = MediaQuery.of(context).viewInsets.bottom;
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.lightBackground,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -148,39 +150,46 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(height: 40),
-                    
-                    // Continue Button
-                    SizedBox(
-                      width: double.infinity,
-                      height: 56,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // Navigate to HomeScreen as success login
-                          Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(builder: (context) => const HomeScreen()),
-                            (route) => false,
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primaryColor,
-                          foregroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(28),
-                          ),
-                          elevation: 0,
+                  ],
+                ),
+              ),
+            ),
+
+            // Continue Button + Sign Up link pinned at the bottom
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24.0, 8.0, 24.0, 8.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    height: 56,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (context) => const HomeScreen()),
+                          (route) => false,
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.primaryColor,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(28),
                         ),
-                        child: const Text(
-                          'Continue',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        elevation: 0,
+                      ),
+                      child: const Text(
+                        'Continue',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 24),
-                    
-                    // Contact Support
+                  ),
+                  if (bottomInset == 0) ...[  
+                    const SizedBox(height: 16),
                     Center(
                       child: RichText(
                         text: TextSpan(
@@ -212,44 +221,44 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
                   ],
-                ),
+                ],
               ),
             ),
-            
-            // Terms and Conditions pinned to the bottom
-            Padding(
-              padding: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 24.0, top: 8.0),
-              child: RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                  style: TextStyle(
-                    color: AppColors.darkBackground.withOpacity(0.8),
-                    fontSize: 14,
-                    height: 1.4,
+
+            // Terms and Conditions - hide when keyboard is open
+            if (bottomInset == 0)
+              Padding(
+                padding: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 24.0, top: 4.0),
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: TextStyle(
+                      color: AppColors.darkBackground.withOpacity(0.8),
+                      fontSize: 14,
+                      height: 1.4,
+                    ),
+                    children: const [
+                      TextSpan(text: 'By continuing, you agree to our '),
+                      TextSpan(
+                        text: 'Term of use',
+                        style: TextStyle(
+                          color: AppColors.primaryColor,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                      TextSpan(text: ' and acknowledge that you have read our '),
+                      TextSpan(
+                        text: 'Privacy Policy',
+                        style: TextStyle(
+                          color: AppColors.primaryColor,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ],
                   ),
-                  children: const [
-                    TextSpan(text: 'By continuing, you agree to our '),
-                    TextSpan(
-                      text: 'Term of use',
-                      style: TextStyle(
-                        color: AppColors.primaryColor,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                    TextSpan(text: ' and acknowledge that you have read our '),
-                    TextSpan(
-                      text: 'Privacy Policy',
-                      style: TextStyle(
-                        color: AppColors.primaryColor,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ],
                 ),
               ),
-            ),
           ],
         ),
       ),
