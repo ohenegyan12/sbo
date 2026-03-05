@@ -6,6 +6,7 @@ import 'help_center_screen.dart';
 import 'about_app_screen.dart';
 import 'update_app_screen.dart';
 import '../constants/app_colors.dart';
+import '../widgets/app_toast.dart';
 
 class ProfileScreen extends StatelessWidget {
   final bool isTab;
@@ -66,13 +67,19 @@ class ProfileScreen extends StatelessWidget {
                       Positioned(
                         right: 0,
                         bottom: 0,
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: const BoxDecoration(
-                            color: Color(0xFF1054F3),
-                            shape: BoxShape.circle,
+                        child: GestureDetector(
+                          onTap: () {
+                            // TODO: Implement image picker logic
+                            AppToast.info('Profile picture update coming soon!');
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: const BoxDecoration(
+                              color: Color(0xFF1054F3),
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(Icons.camera_alt, color: Colors.white, size: 16),
                           ),
-                          child: const Icon(Icons.edit, color: Colors.white, size: 16),
                         ),
                       ),
                     ],

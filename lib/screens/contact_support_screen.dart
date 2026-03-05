@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/app_assets.dart';
 import '../constants/app_colors.dart';
+import '../widgets/app_toast.dart';
 
 class ContactSupportScreen extends StatelessWidget {
   const ContactSupportScreen({super.key});
@@ -96,7 +97,7 @@ class ContactSupportScreen extends StatelessWidget {
                 height: 56,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Send message logic
+                    AppToast.success('Message sent successfully!');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primaryColor,
@@ -180,6 +181,11 @@ class ContactSupportScreen extends StatelessWidget {
       ),
       child: TextField(
         maxLines: maxLines,
+        style: const TextStyle(
+          color: AppColors.darkBackground,
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+        ),
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: hint,

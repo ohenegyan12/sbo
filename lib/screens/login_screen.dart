@@ -69,6 +69,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextField(
                       controller: _phoneController,
                       keyboardType: TextInputType.phone,
+                      style: const TextStyle(
+                        color: AppColors.darkBackground,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
                       decoration: InputDecoration(
                         hintText: 'Enter your phone number',
                         hintStyle: TextStyle(color: AppColors.darkBackground.withOpacity(0.3)),
@@ -102,6 +107,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextField(
                       controller: _passwordController,
                       obscureText: _obscurePassword,
+                      style: const TextStyle(
+                        color: AppColors.darkBackground,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
                       decoration: InputDecoration(
                         hintText: 'Create your password',
                         hintStyle: TextStyle(color: AppColors.darkBackground.withOpacity(0.3)),

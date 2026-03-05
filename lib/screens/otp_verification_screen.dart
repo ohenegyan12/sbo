@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../constants/app_colors.dart';
+import '../widgets/app_toast.dart';
 import 'reset_password_screen.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
@@ -153,7 +154,12 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     const SizedBox(height: 16),
                     // Resend Text Button
                     GestureDetector(
-                      onTap: _canResend ? _startTimer : null,
+                      onTap: _canResend 
+                        ? () {
+                            _startTimer();
+                            AppToast.info('OTP resent to your phone number');
+                          } 
+                        : null,
                       child: Text(
                         'Resend',
                         style: TextStyle(

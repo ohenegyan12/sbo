@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
+import '../widgets/app_toast.dart';
 
 import 'otp_verification_screen.dart';
 
@@ -68,6 +69,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     TextField(
                       controller: _phoneController,
                       keyboardType: TextInputType.phone,
+                      style: const TextStyle(
+                        color: AppColors.darkBackground,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
                       decoration: InputDecoration(
                         hintText: 'enter phone number',
                         hintStyle: TextStyle(color: AppColors.darkBackground.withOpacity(0.3)),
@@ -100,6 +106,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 height: 56,
                 child: ElevatedButton(
                   onPressed: () {
+                    AppToast.info('OTP sent to your phone number');
                     Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => const OtpVerificationScreen()),
                     );

@@ -67,6 +67,11 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               TextField(
                 controller: _newPasswordController,
                 obscureText: _obscureNewPassword,
+                style: const TextStyle(
+                  color: AppColors.darkBackground,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
                 decoration: InputDecoration(
                   hintText: 'New password',
                   hintStyle: TextStyle(color: AppColors.darkBackground.withOpacity(0.3)),
@@ -111,6 +116,11 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               TextField(
                 controller: _confirmPasswordController,
                 obscureText: _obscureConfirmPassword,
+                style: const TextStyle(
+                  color: AppColors.darkBackground,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
                 decoration: InputDecoration(
                   hintText: 'Confirm new password',
                   hintStyle: TextStyle(color: AppColors.darkBackground.withOpacity(0.3)),

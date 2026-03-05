@@ -190,6 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: const Text(
                           'View Available Subscriptions',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -390,9 +391,12 @@ class _HomeScreenState extends State<HomeScreen> {
             const Spacer(),
             Text(
               label,
+              textAlign: TextAlign.left,
+              maxLines: 2,
+              overflow: TextOverflow.visible,
               style: const TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.w600,
                 height: 1.2,
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
+import '../widgets/app_toast.dart';
 
 class UpdateAppScreen extends StatefulWidget {
   const UpdateAppScreen({super.key});
@@ -25,6 +26,7 @@ class _UpdateAppScreenState extends State<UpdateAppScreen> {
       _isChecking = false;
       _statusMessage = 'You are already using the latest version';
     });
+    AppToast.success('Your app is up to date!');
   }
 
   @override

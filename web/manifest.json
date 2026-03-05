@@ -1,6 +1,6 @@
 {
-    "name": "sbo",
-    "short_name": "sbo",
+    "name": "Tv Bundles",
+    "short_name": "Tv Bundles",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

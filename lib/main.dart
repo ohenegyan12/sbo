@@ -24,6 +24,15 @@ class MyApp extends StatelessWidget {
           onSurface: AppColors.darkBackground,
         ),
         scaffoldBackgroundColor: AppColors.lightBackground,
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: AppColors.darkBackground),
+          bodyMedium: TextStyle(color: AppColors.darkBackground),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          hintStyle: TextStyle(color: AppColors.darkBackground.withOpacity(0.3)),
+          prefixIconColor: AppColors.darkBackground,
+          suffixIconColor: AppColors.darkBackground,
+        ),
         appBarTheme: const AppBarTheme(
           backgroundColor: AppColors.primaryColor,
           foregroundColor: AppColors.lightBackground,
@@ -41,6 +50,15 @@ class MyApp extends StatelessWidget {
           onSurface: AppColors.lightBackground,
         ),
         scaffoldBackgroundColor: AppColors.darkBackground,
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: AppColors.lightBackground),
+          bodyMedium: TextStyle(color: AppColors.lightBackground),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          hintStyle: TextStyle(color: AppColors.lightBackground.withOpacity(0.3)),
+          prefixIconColor: AppColors.lightBackground,
+          suffixIconColor: AppColors.lightBackground,
+        ),
         appBarTheme: const AppBarTheme(
           backgroundColor: AppColors.darkBackground,
           foregroundColor: AppColors.lightBackground,
