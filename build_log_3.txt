@@ -1,0 +1,32 @@
+Building com.example.sbo for simulator (ios)...
+Running Xcode build...                                          
+Xcode build done.                                           15.7s
+Failed to build iOS app
+Uncategorized (Xcode): Command SwiftGeneratePch emitted errors but did not return a nonzero exit code to indicate failure
+
+Error (Xcode): no such file or directory: '/Users/admin/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation'
+
+Error (Xcode): stat cache file '/Users/admin/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.2-22C146-07b28473f605e47e75261259d3ef3b5a.sdkstatcache' not found
+
+Error (Xcode): unable to rename temporary '/Users/admin/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1UD8FU74T1G0P/Foundation-TDMNIE45PJWJ-99850cbb.pcm.tmp' to output file '/Users/admin/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/1UD8FU74T1G0P/Foundation-TDMNIE45PJWJ.pcm': 'No such file or directory'
+
+Error (Xcode): could not build module 'Foundation'
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h:7:8
+
+Error (Xcode): could not build module 'UIKit'
+/Users/admin/StudioProjects/sbo/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterAppDelegate.h:7:8
+
+Error (Xcode): could not build module 'Flutter'
+/Users/admin/StudioProjects/sbo/ios/Runner/GeneratedPluginRegistrant.h:9:8
+
+Error (Xcode): failed to emit precompiled header '/Users/admin/Library/Developer/Xcode/DerivedData/Runner-cpgkazamfvmqlzgwpmoifefpzypv/Build/Intermediates.noindex/PrecompiledHeaders/Runner-Bridging-Header-swift_3344ZIJ77MGZW-clang_1UD8FU74T1G0P.pch' for bridging header '/Users/admin/StudioProjects/sbo/ios/Runner/Runner-Bridging-Header.h'
+
+Uncategorized (Xcode): Command PrecompileSwiftBridgingHeader emitted errors but did not return a nonzero exit code to indicate failure
+
+Swift Compiler Error (Xcode): No such file or directory: '/Users/admin/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation'
+
+Swift Compiler Error (Xcode): Stat cache file '/Users/admin/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.2-22C146-07b28473f605e47e75261259d3ef3b5a.sdkstatcache' not found
+
+Swift Compiler Error (Xcode): Clang importer creation failed
+
+Encountered error while building for simulator.

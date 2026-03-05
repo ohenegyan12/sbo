@@ -164,6 +164,11 @@ class _PurchaseSubscriptionScreenState extends State<PurchaseSubscriptionScreen>
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
           isExpanded: true,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+          ),
+          dropdownColor: Colors.white,
           hint: Text(
             hint,
             style: TextStyle(
@@ -190,6 +195,10 @@ class _PurchaseSubscriptionScreenState extends State<PurchaseSubscriptionScreen>
       child: TextField(
         controller: controller,
         readOnly: isReadOnly,
+        style: const TextStyle(
+          color: Colors.black,
+          fontSize: 14,
+        ),
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: hint,

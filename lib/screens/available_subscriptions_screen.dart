@@ -99,6 +99,10 @@ class _AvailableSubscriptionsScreenState extends State<AvailableSubscriptionsScr
               child: TextField(
                 controller: _searchController,
                 onChanged: _onSearchChanged,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
                 decoration: InputDecoration(
                   hintText: 'Search Subscriptions',
                   hintStyle: TextStyle(

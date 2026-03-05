@@ -1,0 +1,21 @@
+Building com.example.sbo for simulator (ios)...
+Running Xcode build...                                          
+Xcode build done.                                           16.8s
+Failed to build iOS app
+Uncategorized (Xcode): Command SwiftGeneratePch emitted errors but did not return a nonzero exit code to indicate failure
+
+Error (Xcode): no such file or directory: '/Users/admin/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation'
+
+Error (Xcode): stat cache file '/Users/admin/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.2-22C146-07b28473f605e47e75261259d3ef3b5a.sdkstatcache' not found
+
+Uncategorized (Xcode): Command PrecompileSwiftBridgingHeader emitted errors but did not return a nonzero exit code to indicate failure
+
+Swift Compiler Error (Xcode): No such file or directory: '/Users/admin/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation'
+
+Swift Compiler Error (Xcode): Stat cache file '/Users/admin/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator18.2-22C146-07b28473f605e47e75261259d3ef3b5a.sdkstatcache' not found
+
+Swift Compiler Error (Xcode): Unable to rename temporary '/Users/admin/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/20A4PV0CHNAYP/DataDetection-2ZF0G5PNWXY3K-490c16bc.pcm.tmp' to output file '/Users/admin/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/20A4PV0CHNAYP/DataDetection-2ZF0G5PNWXY3K.pcm': 'No such file or directory'
+
+Swift Compiler Error (Xcode): Cannot load underlying module for 'DataDetection'
+
+Encountered error while building for simulator.
