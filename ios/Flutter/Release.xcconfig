@@ -1,4 +1,2 @@
 #include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
 #include "Generated.xcconfig"
-CLANG_MODULE_CACHE_PATH = $(SRCROOT)/../build/module_cache
-ONLY_ACTIVE_ARCH = YES

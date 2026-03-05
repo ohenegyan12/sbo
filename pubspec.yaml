@@ -104,3 +104,7 @@ flutter_launcher_icons:
   macos:
     generate: true
     image_path: "assets/images/app-icon.png"
+
+
+# add this line to your dependencies
+fluttertoast: ^9.0.0
